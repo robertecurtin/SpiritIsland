@@ -19,8 +19,8 @@ const spiritToImage = (name) => {
 
 const PadRemainingSpace = <Col/>;
 
-const sortByOffenseAscending = (a, b) => {
-  return b.summary[0] - a.summary[0];
+const sortByOffenseAscending = () => {
+  return false;
 };
 
 const summaryToBarData = (s) => {
