@@ -1,0 +1,45 @@
+{
+  "name": "neat-stuff",
+  "version": "1.0.0",
+  "dependencies": {
+    "@dhaiwat10/react-link-preview": "^1.12.2",
+    "bootstrap": "4.5.3",
+    "gh-pages": "^3.2.3",
+    "prop-types": "^15.7.2",
+    "react": "17.0.1",
+    "react-bootstrap": "1.4.0",
+    "react-dom": "17.0.1",
+    "react-scripts": "4.0.0"
+  },
+  "description": "Links to cool stuff",
+  "main": "index.js",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "eslint 'src/*.js' 'src/**/*.js' ",
+    "fix": "eslint 'src/**.js' 'src/**/*.js' --fix"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.25.1"
+  },
+  "author": "Robert Curtin",
+  "license": "MIT",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": "https://robertecurtin.github.io/neat-stuff"
+}

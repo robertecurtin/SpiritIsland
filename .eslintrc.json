@@ -1,0 +1,18 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "semi": 2,
+        "no-unused-expressions": 2,
+        "no-unused-vars": 2,
+        "no-unused-labels": 2
+    },
+    "extends": [
+        "plugin:react/recommended"
+    ]
+}
