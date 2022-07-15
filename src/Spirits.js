@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 import { Chart } from 'devextreme-react';
-import { ValueAxis, CommonSeriesSettings, SeriesTemplate } from 'devextreme-react/chart';
+import { ValueAxis, CommonSeriesSettings, SeriesTemplate, Size } from 'devextreme-react/chart';
 import { Legend } from 'devextreme-react/bar-gauge';
 
 const spirits = require('./config/spirits.json');
@@ -59,6 +59,7 @@ function Spirits() {
                 <Chart
                   palette={palette}
                   dataSource={summaryToBarData(spirit.summary)}>
+                    <Size height={150} />
 
                   <CommonSeriesSettings
                     argumentField="label"
