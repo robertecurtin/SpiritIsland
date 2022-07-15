@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/neat-stuff/static/css/main.3f9ef032.chunk.css",
-    "main.js": "/neat-stuff/static/js/main.5298b41b.chunk.js",
-    "main.js.map": "/neat-stuff/static/js/main.5298b41b.chunk.js.map",
-    "runtime-main.js": "/neat-stuff/static/js/runtime-main.23331956.js",
-    "runtime-main.js.map": "/neat-stuff/static/js/runtime-main.23331956.js.map",
-    "static/css/2.e5750c50.chunk.css": "/neat-stuff/static/css/2.e5750c50.chunk.css",
-    "static/js/2.7bcdde7a.chunk.js": "/neat-stuff/static/js/2.7bcdde7a.chunk.js",
-    "static/js/2.7bcdde7a.chunk.js.map": "/neat-stuff/static/js/2.7bcdde7a.chunk.js.map",
-    "index.html": "/neat-stuff/index.html",
-    "static/css/2.e5750c50.chunk.css.map": "/neat-stuff/static/css/2.e5750c50.chunk.css.map",
-    "static/css/main.3f9ef032.chunk.css.map": "/neat-stuff/static/css/main.3f9ef032.chunk.css.map",
-    "static/js/2.7bcdde7a.chunk.js.LICENSE.txt": "/neat-stuff/static/js/2.7bcdde7a.chunk.js.LICENSE.txt"
+    "main.css": "/spirit-island/static/css/main.3f9ef032.chunk.css",
+    "main.js": "/spirit-island/static/js/main.1ff5ed33.chunk.js",
+    "main.js.map": "/spirit-island/static/js/main.1ff5ed33.chunk.js.map",
+    "runtime-main.js": "/spirit-island/static/js/runtime-main.8442f9da.js",
+    "runtime-main.js.map": "/spirit-island/static/js/runtime-main.8442f9da.js.map",
+    "static/css/2.e5750c50.chunk.css": "/spirit-island/static/css/2.e5750c50.chunk.css",
+    "static/js/2.edbe4a88.chunk.js": "/spirit-island/static/js/2.edbe4a88.chunk.js",
+    "static/js/2.edbe4a88.chunk.js.map": "/spirit-island/static/js/2.edbe4a88.chunk.js.map",
+    "index.html": "/spirit-island/index.html",
+    "static/css/2.e5750c50.chunk.css.map": "/spirit-island/static/css/2.e5750c50.chunk.css.map",
+    "static/css/main.3f9ef032.chunk.css.map": "/spirit-island/static/css/main.3f9ef032.chunk.css.map",
+    "static/js/2.edbe4a88.chunk.js.LICENSE.txt": "/spirit-island/static/js/2.edbe4a88.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.23331956.js",
+    "static/js/runtime-main.8442f9da.js",
     "static/css/2.e5750c50.chunk.css",
-    "static/js/2.7bcdde7a.chunk.js",
+    "static/js/2.edbe4a88.chunk.js",
     "static/css/main.3f9ef032.chunk.css",
-    "static/js/main.5298b41b.chunk.js"
+    "static/js/main.1ff5ed33.chunk.js"
   ]
 }
