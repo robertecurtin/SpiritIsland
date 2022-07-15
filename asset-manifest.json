@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/spirit-island/static/css/main.3f9ef032.chunk.css",
-    "main.js": "/spirit-island/static/js/main.210e64a1.chunk.js",
-    "main.js.map": "/spirit-island/static/js/main.210e64a1.chunk.js.map",
+    "main.js": "/spirit-island/static/js/main.9488c258.chunk.js",
+    "main.js.map": "/spirit-island/static/js/main.9488c258.chunk.js.map",
     "runtime-main.js": "/spirit-island/static/js/runtime-main.ab963e7b.js",
     "runtime-main.js.map": "/spirit-island/static/js/runtime-main.ab963e7b.js.map",
     "static/css/2.3fde6769.chunk.css": "/spirit-island/static/css/2.3fde6769.chunk.css",
-    "static/js/2.a6f83dbe.chunk.js": "/spirit-island/static/js/2.a6f83dbe.chunk.js",
-    "static/js/2.a6f83dbe.chunk.js.map": "/spirit-island/static/js/2.a6f83dbe.chunk.js.map",
+    "static/js/2.d39881aa.chunk.js": "/spirit-island/static/js/2.d39881aa.chunk.js",
+    "static/js/2.d39881aa.chunk.js.map": "/spirit-island/static/js/2.d39881aa.chunk.js.map",
     "index.html": "/spirit-island/index.html",
     "static/css/2.3fde6769.chunk.css.map": "/spirit-island/static/css/2.3fde6769.chunk.css.map",
     "static/css/main.3f9ef032.chunk.css.map": "/spirit-island/static/css/main.3f9ef032.chunk.css.map",
-    "static/js/2.a6f83dbe.chunk.js.LICENSE.txt": "/spirit-island/static/js/2.a6f83dbe.chunk.js.LICENSE.txt",
+    "static/js/2.d39881aa.chunk.js.LICENSE.txt": "/spirit-island/static/js/2.d39881aa.chunk.js.LICENSE.txt",
     "static/media/A_Spread_of_Rampant_Green.png": "/spirit-island/static/media/A_Spread_of_Rampant_Green.54e7d682.png",
     "static/media/Bringer_of_Dreams_and_Nightmares.png": "/spirit-island/static/media/Bringer_of_Dreams_and_Nightmares.bef86c6b.png",
     "static/media/Downpour_Drenches_the_World.png": "/spirit-island/static/media/Downpour_Drenches_the_World.e48e6c8f.png",
@@ -40,8 +40,8 @@
   "entrypoints": [
     "static/js/runtime-main.ab963e7b.js",
     "static/css/2.3fde6769.chunk.css",
-    "static/js/2.a6f83dbe.chunk.js",
+    "static/js/2.d39881aa.chunk.js",
     "static/css/main.3f9ef032.chunk.css",
-    "static/js/main.210e64a1.chunk.js"
+    "static/js/main.9488c258.chunk.js"
   ]
 }
