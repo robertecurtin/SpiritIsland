@@ -2,7 +2,7 @@
   "name": "spirit-island",
   "version": "1.0.0",
   "dependencies": {
-    "@dhaiwat10/react-link-preview": "^1.12.2",
+    "@mui/material": "5.9.0",
     "bootstrap": "4.5.3",
     "gh-pages": "^3.2.3",
     "prop-types": "^15.7.2",
