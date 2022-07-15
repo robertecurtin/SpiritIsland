@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 import { Chart } from 'devextreme-react';
-import { CommonSeriesSettings, SeriesTemplate } from 'devextreme-react/chart';
+import { ValueAxis, CommonSeriesSettings, SeriesTemplate } from 'devextreme-react/chart';
 import { Legend } from 'devextreme-react/bar-gauge';
 
 const spirits = require('./config/spirits.json');
@@ -66,6 +66,7 @@ function Spirits() {
                     type="bar"
                     ignoreEmptyPoints={true}
                   />
+                  <ValueAxis label={{visible: false}} />
                   <SeriesTemplate nameField="label" />
                   <Legend visible={false} />
                 </Chart>
