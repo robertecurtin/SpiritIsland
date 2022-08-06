@@ -9,7 +9,7 @@ const spirits = require('./config/spirits.json');
 
 const spiritToImage = (_name) => {
   const name = _name.replaceAll(' ', '_');
-  return `${process.env.PUBLIC_URL}/spirit-island/assets/spirits/${name}.png`;
+  return `${process.env.PUBLIC_URL}/assets/spirits/${name}.png`;
 };
 
 const parsedSortType = (sortType) => {
