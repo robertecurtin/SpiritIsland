@@ -59,7 +59,7 @@ const palette = [
 
 const spiritCards = spirits.map((spirit) => {
   const barData = summaryToBarData(spirit.summary);
-  const spiritImage = spiritToImage(spirit.name)
+  const spiritImage = spiritToImage(spirit.name);
   
   return <Card sx={{ maxWidth: 345 }} key={spirit.name}>
     <CardActionArea>
