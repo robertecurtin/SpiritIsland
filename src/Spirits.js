@@ -2,8 +2,7 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
-import { Chart } from 'devextreme-react';
-import { ValueAxis, CommonSeriesSettings, SeriesTemplate, Size } from 'devextreme-react/chart';
+import Chart, { ValueAxis, CommonSeriesSettings, SeriesTemplate, Size } from 'devextreme-react/chart';
 import { Legend } from 'devextreme-react/bar-gauge';
 
 const spirits = require('./config/spirits.json');
