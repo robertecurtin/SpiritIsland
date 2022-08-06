@@ -60,46 +60,55 @@ const palette = [
   '#FFCE54',
 ];
 
+// defining them all up front so they aren't reconstructed on the fly
+const spiritCards = spirits.map((spirit) => {
+  return <Card sx={{ maxWidth: 345 }} key={spirit.name}>
+    <CardActionArea>
+      <CardMedia
+        component="img"
+        image={spiritToImage(spirit.name)}
+        alt= {spirit.name}
+                      />
+      <CardContent>
+        <Chart
+          palette={palette}
+          dataSource={summaryToBarData(spirit.summary)}>
+            <Size height={150} />
+
+          <CommonSeriesSettings
+            argumentField="label"
+            valueField="value"
+            type="bar"
+            ignoreEmptyPoints={true}
+          />
+          <ValueAxis label={{visible: false}} />
+          <SeriesTemplate nameField="label" />
+          <Legend visible={false} />
+        </Chart>
+        <Typography gutterBottom variant="h5" component="div">
+          {spirit.name}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {spirit.description}
+        </Typography>
+      </CardContent>
+    </CardActionArea>
+  </Card>;
+});
+
+const spiritToSpiritCard = (spirit) => {
+  return spiritCards.find(a => {
+    return a.key === spirit.name; // lil hacky but eh
+  });
+};
+
 function Spirits(props) {
   const sortedSpirits = [...spirits].sort(sortBySortType(props.sortType));
 
   return <div className='Game'>
     <Container>
       <Row>
-        {sortedSpirits.map((spirit) => {
-          return <Card sx={{ maxWidth: 345 }} key={spirit.name}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                image={spiritToImage(spirit.name)}
-                alt= {spirit.name}
-                              />
-              <CardContent>
-                <Chart
-                  palette={palette}
-                  dataSource={summaryToBarData(spirit.summary)}>
-                    <Size height={150} />
-
-                  <CommonSeriesSettings
-                    argumentField="label"
-                    valueField="value"
-                    type="bar"
-                    ignoreEmptyPoints={true}
-                  />
-                  <ValueAxis label={{visible: false}} />
-                  <SeriesTemplate nameField="label" />
-                  <Legend visible={false} />
-                </Chart>
-                <Typography gutterBottom variant="h5" component="div">
-                  {spirit.name}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {spirit.description}
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>;
-        })}
+        {sortedSpirits.map((spirit) => spiritToSpiritCard(spirit))}
         {PadRemainingSpace}
       </Row>
     </Container>
