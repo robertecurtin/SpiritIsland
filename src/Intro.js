@@ -5,15 +5,20 @@ import { Alert } from 'react-bootstrap';
 import SouthIcon from '@mui/icons-material/South';
 import NorthIcon from '@mui/icons-material/North';
 
+
+const radioButtons =
+  ([
+    'Offense', 'Control', 'Fear', 'Defense', 'Utility'
+  ]).map((type) => {
+    return <><FormControlLabel key={{type} + '-'} value={type + '-'} control={<Radio />} label={<div>{type} <SouthIcon/></div>} />
+      <FormControlLabel key={{type} + '+'} value={type + '+'} control={<Radio />} label={<div>{type} <NorthIcon/></div>} /></>;
+  });
+
 function Intro(props) {
 
   const handleChange = (event) => {
     props.setSortType(event.target.value);
   };
-
-  const sortTypes = [
-    'Offense', 'Control', 'Fear', 'Defense', 'Utility'
-  ];
 
   return <Alert variant='primary'>
     <FormControl>
@@ -25,10 +30,7 @@ function Intro(props) {
       value={props.sortType}
       onChange={handleChange}
       >
-        {sortTypes.map((type) => {
-          return <><FormControlLabel key={{type} + '-'} value={type + '-'} control={<Radio />} label={<div>{type} <SouthIcon/></div>} />
-            <FormControlLabel key={{type} + '+'} value={type + '+'} control={<Radio />} label={<div>{type} <NorthIcon/></div>} /></>;
-        })}
+        {radioButtons}
       </RadioGroup>
     </FormControl>
   </Alert>;

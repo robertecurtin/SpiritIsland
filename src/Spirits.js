@@ -65,8 +65,15 @@ const spiritCards = spirits.map((spirit) => {
         component="img"
         image={spiritToImage(spirit.name)}
         alt= {spirit.name}
-                      />
+                      >
+      </CardMedia>
       <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {spirit.name}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {spirit.complexity} complexity
+        </Typography>
         <Chart
           palette={palette}
           dataSource={summaryToBarData(spirit.summary)}>
@@ -82,9 +89,6 @@ const spiritCards = spirits.map((spirit) => {
           <SeriesTemplate nameField="label" />
           <Legend visible={false} />
         </Chart>
-        <Typography gutterBottom variant="h5" component="div">
-          {spirit.name}
-        </Typography>
         <Typography variant="body2" color="text.secondary">
           {spirit.description}
         </Typography>
