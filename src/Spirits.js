@@ -1,6 +1,6 @@
 /* eslint react/prop-types: 0 */
 import React from 'react';
-import { Container, Col, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 import { Chart } from 'devextreme-react';
 import { ValueAxis, CommonSeriesSettings, SeriesTemplate, Size } from 'devextreme-react/chart';
@@ -12,8 +12,6 @@ const spiritToImage = (_name) => {
   const name = _name.replaceAll(' ', '_');
   return `spirit-island/assets/spirits/${name}.png`;
 };
-
-const PadRemainingSpace = <Col/>;
 
 const parsedSortType = (sortType) => {
   return  {
@@ -60,7 +58,6 @@ const palette = [
   '#FFCE54',
 ];
 
-// defining them all up front so they aren't reconstructed on the fly
 const spiritCards = spirits.map((spirit) => {
   return <Card sx={{ maxWidth: 345 }} key={spirit.name}>
     <CardActionArea>
@@ -109,10 +106,9 @@ function Spirits(props) {
     <Container>
       <Row>
         {sortedSpirits.map((spirit) => spiritToSpiritCard(spirit))}
-        {PadRemainingSpace}
       </Row>
     </Container>
-  </div>;
+      </div>;
 }
 
 export default Spirits;
