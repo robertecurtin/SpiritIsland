@@ -7,14 +7,9 @@ import { Legend } from 'devextreme-react/bar-gauge';
 
 const spirits = require('./config/spirits.json');
 
-function importAll(r) {
-  return r.keys().map(r).map( (a) => a.default);
-}
-
-const spiritImages = importAll(require.context('./assets/spirits', false, /\.(png|jpe?g|svg)$/));
-
-const spiritToImage = (name) => {
-  return spiritImages.find(v => v.match(name.split(" ")[0]));
+const spiritToImage = (_name) => {
+  const name = _name.replaceAll(' ', '_');
+  return `spirit-island/assets/spirits/${name}.png`;
 };
 
 const PadRemainingSpace = <Col/>;
