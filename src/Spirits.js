@@ -1,3 +1,4 @@
+/* eslint react/prop-types: 0 */
 import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
@@ -14,8 +15,31 @@ const spiritToImage = (_name) => {
 
 const PadRemainingSpace = <Col/>;
 
-const sortByOffenseAscending = () => {
-  return false;
+const parsedSortType = (sortType) => {
+  return  {
+    'Offense+': { index: 0, direction: '>'},
+    'Offense-': { index: 0, direction: '<'},
+    'Control+': { index: 1, direction: '>'},
+    'Control-': { index: 1, direction: '<'},
+    'Fear+': { index: 2, direction: '>'},
+    'Fear-': { index: 2, direction: '<'},
+    'Defense+': { index: 3, direction: '>'},
+    'Defense-': { index: 3, direction: '<'},
+    'Utility+': { index: 4, direction: '>'},
+    'Utility-': { index: 4, direction: '<'},
+  }[sortType];
+};
+
+const sortBySortType = (sortType) => {
+  const {index, direction} = parsedSortType(sortType);
+
+  if(direction === '<') {
+    return (a, b) => b.summary[index] - a.summary[index];
+  }
+  else
+  {
+    return (a, b) => a.summary[index] - b.summary[index];
+  }
 };
 
 const summaryToBarData = (s) => {
@@ -36,8 +60,8 @@ const palette = [
   '#FFCE54',
 ];
 
-function Spirits() {
-  const sortedSpirits = spirits.sort(sortByOffenseAscending);
+function Spirits(props) {
+  const sortedSpirits = [...spirits].sort(sortBySortType(props.sortType));
 
   return <div className='Game'>
     <Container>
