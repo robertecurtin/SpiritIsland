@@ -58,11 +58,14 @@ const palette = [
 ];
 
 const spiritCards = spirits.map((spirit) => {
+  const barData = summaryToBarData(spirit.summary);
+  const spiritImage = spiritToImage(spirit.name)
+  
   return <Card sx={{ maxWidth: 345 }} key={spirit.name}>
     <CardActionArea>
       <CardMedia
         component="img"
-        image={spiritToImage(spirit.name)}
+        image={spiritImage}
         alt= {spirit.name}
                       >
       </CardMedia>
@@ -75,7 +78,7 @@ const spiritCards = spirits.map((spirit) => {
         </Typography>
         <Chart
           palette={palette}
-          dataSource={summaryToBarData(spirit.summary)}>
+          dataSource={barData}>
             <Size height={150} />
 
           <CommonSeriesSettings
