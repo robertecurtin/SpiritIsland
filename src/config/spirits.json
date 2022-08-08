@@ -1,7 +1,7 @@
 [
   {
     "name": "Lightning's Swift Strike",
-    "complexity": "low",
+    "complexity": "Low",
     "expansion": "base",
     "summary": [
       5,
@@ -14,7 +14,7 @@
   },
   {
     "name": "River Surges in Sunlight",
-    "complexity": "low",
+    "complexity": "Low",
     "expansion": "base",
     "summary": [
       4,
@@ -27,7 +27,7 @@
   },
   {
     "name": "Vital Strength of the Earth",
-    "complexity": "low",
+    "complexity": "Low",
     "expansion": "base",
     "summary": [
       2,
@@ -40,7 +40,7 @@
   },
   {
     "name": "Shadows Flicker Like Flame",
-    "complexity": "low",
+    "complexity": "Low",
     "expansion": "base",
     "summary": [
       4,
@@ -53,7 +53,7 @@
   },
   {
     "name": "Thunderspeaker",
-    "complexity": "moderate",
+    "complexity": "Moderate",
     "expansion": "base",
     "summary": [
       4,
@@ -66,7 +66,7 @@
   },
   {
     "name": "A Spread of Rampant Green",
-    "complexity": "moderate",
+    "complexity": "Moderate",
     "expansion": "base",
     "summary": [
       4,
@@ -79,7 +79,7 @@
   },
   {
     "name": "Ocean's Hungry Grasp",
-    "complexity": "high",
+    "complexity": "High",
     "expansion": "base",
     "summary": [
       5,
@@ -92,7 +92,7 @@
   },
   {
     "name": "Bringer of Dreams and Nightmares",
-    "complexity": "high",
+    "complexity": "High",
     "expansion": "base",
     "summary": [
       1,
@@ -105,7 +105,7 @@
   },
   {
     "name": "Sharp Fangs Behind the Leaves",
-    "complexity": "moderate",
+    "complexity": "Moderate",
     "expansion": "branch and claw",
     "summary": [
       3,
@@ -118,7 +118,7 @@
   },
   {
     "name": "Keeper of the Forbidden Wilds",
-    "complexity": "moderate",
+    "complexity": "Moderate",
     "expansion": "branch and claw",
     "summary": [
       5,
@@ -131,7 +131,7 @@
   },
   {
     "name": "Heart of the Wildfire",
-    "complexity": "high",
+    "complexity": "High",
     "expansion": "1",
     "summary": [
       5,
@@ -144,7 +144,7 @@
   },
   {
     "name": "Serpent Slumbering Beneath the Island",
-    "complexity": "high",
+    "complexity": "High",
     "expansion": "1",
     "summary": [
       2,
@@ -157,7 +157,7 @@
   },
   {
     "name": "Stone's Unyielding Defiance",
-    "complexity": "moderate",
+    "complexity": "Moderate",
     "expansion": "jagged earth",
     "summary": [
       4,
@@ -170,7 +170,7 @@
   },
   {
     "name": "Shifting Memory of Ages",
-    "complexity": "moderate",
+    "complexity": "Moderate",
     "expansion": "jagged earth",
     "summary": [
       1,
@@ -183,7 +183,7 @@
   },
   {
     "name": "Grinning Trickster Stirs Up Trouble",
-    "complexity": "moderate",
+    "complexity": "Moderate",
     "expansion": "jagged earth",
     "summary": [
       4,
@@ -196,7 +196,7 @@
   },
   {
     "name": "Lure of the Deep Wilderness",
-    "complexity": "moderate",
+    "complexity": "Moderate",
     "expansion": "jagged earth",
     "summary": [
       4,
@@ -209,7 +209,7 @@
   },
   {
     "name": "Many Minds Move as One",
-    "complexity": "moderate",
+    "complexity": "Moderate",
     "expansion": "jagged earth",
     "summary": [
       1,
@@ -222,7 +222,7 @@
   },
   {
     "name": "Volcano Looming High",
-    "complexity": "moderate",
+    "complexity": "Moderate",
     "expansion": "jagged earth",
     "summary": [
       5,
@@ -235,7 +235,7 @@
   },
   {
     "name": "Shroud of Silent Mist",
-    "complexity": "high",
+    "complexity": "High",
     "expansion": "jagged earth",
     "summary": [
       4,
@@ -248,7 +248,7 @@
   },
   {
     "name": "Vengeance as a Burning Plague",
-    "complexity": "high",
+    "complexity": "High",
     "expansion": "jagged earth",
     "summary": [
       5,
@@ -261,7 +261,7 @@
   },
   {
     "name": "Starlight Seeks Its Form",
-    "complexity": "very high",
+    "complexity": "Very high",
     "expansion": "jagged earth",
     "summary": [
       1,
@@ -274,7 +274,7 @@
   },
   {
     "name": "Fractured Days Split the Sky",
-    "complexity": "very high",
+    "complexity": "Very high",
     "expansion": "jagged earth",
     "summary": [
       1,
@@ -287,7 +287,7 @@
   },
   {
     "name": "Downpour Drenches the World",
-    "complexity": "high",
+    "complexity": "High",
     "expansion": "2",
     "summary": [
       2,
@@ -300,7 +300,7 @@
   },
   {
     "name": "Finder of Paths Unseen",
-    "complexity": "very high",
+    "complexity": "Very high",
     "expansion": "2",
     "summary": [
       1,

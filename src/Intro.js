@@ -36,8 +36,6 @@ function Intro(props) {
       </RadioGroup>
     </FormControl>
     {complexities.map((complexity) => {
-      console.log(props.complexityFilters);
-      console.log(props.complexityFilters[complexity]);
       return <Button
         key={complexity}
         variant={props.complexityFilters[complexity] ? "contained" : "outlined"}

@@ -4,7 +4,9 @@ import Intro from './Intro';
 
 function App() {
   const [sortType, setSortType] = React.useState('Offense-');
-  const [complexityFilters, setComplexityFilters] = React.useState({});
+  const [complexityFilters, setComplexityFilters] = React.useState({
+    'Low': true, 'Moderate': true, 'High': true, 'Very high': true
+  });
 
   return <div className='App'>
     <Intro
@@ -13,7 +15,7 @@ function App() {
       complexityFilters={complexityFilters}
       setComplexityFilters={setComplexityFilters}
       />
-    <Spirits sortType={sortType}/>
+    <Spirits sortType={sortType} complexityFilters={complexityFilters}/>
   </div>;
 }
 

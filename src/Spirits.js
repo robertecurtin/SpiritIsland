@@ -60,7 +60,7 @@ const palette = [
 const spiritCards = spirits.map((spirit) => {
   const barData = summaryToBarData(spirit.summary);
   const spiritImage = spiritToImage(spirit.name);
-  
+
   return <Card sx={{ maxWidth: 345 }} key={spirit.name}>
     <CardActionArea>
       <CardMedia
@@ -106,7 +106,9 @@ const spiritToSpiritCard = (spirit) => {
 };
 
 function Spirits(props) {
-  const sortedSpirits = [...spirits].sort(sortBySortType(props.sortType));
+  const sortedSpirits = spirits
+    .filter((v) => props.complexityFilters[v.complexity])
+    .sort(sortBySortType(props.sortType));
 
   return <div className='Game'>
     <Container>
