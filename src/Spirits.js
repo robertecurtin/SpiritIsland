@@ -2,15 +2,14 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
-import { Chart } from 'devextreme-react';
-import { ValueAxis, CommonSeriesSettings, SeriesTemplate, Size } from 'devextreme-react/chart';
+import Chart, { ValueAxis, CommonSeriesSettings, SeriesTemplate, Size } from 'devextreme-react/chart';
 import { Legend } from 'devextreme-react/bar-gauge';
 
 const spirits = require('./config/spirits.json');
 
 const spiritToImage = (_name) => {
   const name = _name.replaceAll(' ', '_');
-  return `spirit-island/assets/spirits/${name}.png`;
+  return `${process.env.PUBLIC_URL}/assets/spirits/${name}.png`;
 };
 
 const parsedSortType = (sortType) => {
@@ -59,11 +58,14 @@ const palette = [
 ];
 
 const spiritCards = spirits.map((spirit) => {
+  const barData = summaryToBarData(spirit.summary);
+  const spiritImage = spiritToImage(spirit.name);
+  
   return <Card sx={{ maxWidth: 345 }} key={spirit.name}>
     <CardActionArea>
       <CardMedia
         component="img"
-        image={spiritToImage(spirit.name)}
+        image={spiritImage}
         alt= {spirit.name}
                       >
       </CardMedia>
@@ -76,7 +78,7 @@ const spiritCards = spirits.map((spirit) => {
         </Typography>
         <Chart
           palette={palette}
-          dataSource={summaryToBarData(spirit.summary)}>
+          dataSource={barData}>
             <Size height={150} />
 
           <CommonSeriesSettings
