@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/spirit-island/static/css/main.3f9ef032.chunk.css",
-    "main.js": "/spirit-island/static/js/main.8e64a186.chunk.js",
-    "main.js.map": "/spirit-island/static/js/main.8e64a186.chunk.js.map",
+    "main.js": "/spirit-island/static/js/main.ff1317a2.chunk.js",
+    "main.js.map": "/spirit-island/static/js/main.ff1317a2.chunk.js.map",
     "runtime-main.js": "/spirit-island/static/js/runtime-main.ab963e7b.js",
     "runtime-main.js.map": "/spirit-island/static/js/runtime-main.ab963e7b.js.map",
     "static/css/2.3fde6769.chunk.css": "/spirit-island/static/css/2.3fde6769.chunk.css",
-    "static/js/2.77c6ad44.chunk.js": "/spirit-island/static/js/2.77c6ad44.chunk.js",
-    "static/js/2.77c6ad44.chunk.js.map": "/spirit-island/static/js/2.77c6ad44.chunk.js.map",
+    "static/js/2.c045776c.chunk.js": "/spirit-island/static/js/2.c045776c.chunk.js",
+    "static/js/2.c045776c.chunk.js.map": "/spirit-island/static/js/2.c045776c.chunk.js.map",
     "index.html": "/spirit-island/index.html",
     "static/css/2.3fde6769.chunk.css.map": "/spirit-island/static/css/2.3fde6769.chunk.css.map",
     "static/css/main.3f9ef032.chunk.css.map": "/spirit-island/static/css/main.3f9ef032.chunk.css.map",
-    "static/js/2.77c6ad44.chunk.js.LICENSE.txt": "/spirit-island/static/js/2.77c6ad44.chunk.js.LICENSE.txt"
+    "static/js/2.c045776c.chunk.js.LICENSE.txt": "/spirit-island/static/js/2.c045776c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ab963e7b.js",
     "static/css/2.3fde6769.chunk.css",
-    "static/js/2.77c6ad44.chunk.js",
+    "static/js/2.c045776c.chunk.js",
     "static/css/main.3f9ef032.chunk.css",
-    "static/js/main.8e64a186.chunk.js"
+    "static/js/main.ff1317a2.chunk.js"
   ]
 }
