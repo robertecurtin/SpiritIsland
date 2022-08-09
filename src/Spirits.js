@@ -19,6 +19,7 @@ const sortTypeToIndex = (sortType) => {
     'Fear': 2,
     'Defense': 3,
     'Utility': 4,
+    'Random spirit': 0
   }[sortType];
 };
 
@@ -105,13 +106,16 @@ function Spirits(props) {
     .filter((v) => props.complexityFilters[v.complexity])
     .sort(sortBySortType(props.sortType));
 
-  return <div className='Game'>
-    <Container>
+  if(props.sortType.type === 'Random spirit' && sortedSpirits.length > 0) {
+    return spiritToSpiritCard(sortedSpirits[Math.floor(Math.random()*sortedSpirits.length)]);
+  }
+  else {
+    return <Container>
       <Row>
         {sortedSpirits.map((spirit) => spiritToSpiritCard(spirit))}
       </Row>
-    </Container>
-      </div>;
+    </Container>;
+  }
 }
 
 export default Spirits;
