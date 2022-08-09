@@ -3,7 +3,7 @@ import Spirits from './Spirits';
 import Intro from './Intro';
 
 function App() {
-  const [sortType, setSortType] = React.useState('Offense-');
+  const [sortType, setSortType] = React.useState({type: 'Offense', direction: '-'});
   const [complexityFilters, setComplexityFilters] = React.useState({
     'Low': true, 'Moderate': true, 'High': true, 'Very high': true
   });

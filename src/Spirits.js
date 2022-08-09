@@ -12,25 +12,20 @@ const spiritToImage = (_name) => {
   return `${process.env.PUBLIC_URL}/assets/spirits/${name}.png`;
 };
 
-const parsedSortType = (sortType) => {
+const sortTypeToIndex = (sortType) => {
   return  {
-    'Offense+': { index: 0, direction: '>'},
-    'Offense-': { index: 0, direction: '<'},
-    'Control+': { index: 1, direction: '>'},
-    'Control-': { index: 1, direction: '<'},
-    'Fear+': { index: 2, direction: '>'},
-    'Fear-': { index: 2, direction: '<'},
-    'Defense+': { index: 3, direction: '>'},
-    'Defense-': { index: 3, direction: '<'},
-    'Utility+': { index: 4, direction: '>'},
-    'Utility-': { index: 4, direction: '<'},
+    'Offense': 0,
+    'Control': 1,
+    'Fear': 2,
+    'Defense': 3,
+    'Utility': 4,
   }[sortType];
 };
 
 const sortBySortType = (sortType) => {
-  const {index, direction} = parsedSortType(sortType);
+  const index = sortTypeToIndex(sortType.type);
 
-  if(direction === '<') {
+  if(sortType.direction === '-') {
     return (a, b) => b.summary[index] - a.summary[index];
   }
   else

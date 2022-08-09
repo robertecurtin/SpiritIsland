@@ -1,39 +1,41 @@
 /* eslint react/prop-types: 0 */
-import { Button, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from '@mui/material';
+import { Button, FormControl, MenuItem, Select } from '@mui/material';
 import React from 'react';
 import { Alert } from 'react-bootstrap';
 import SouthIcon from '@mui/icons-material/South';
 import NorthIcon from '@mui/icons-material/North';
 
-
-const radioButtons =
+const sortOptions =
   ([
     'Offense', 'Control', 'Fear', 'Defense', 'Utility'
   ]).map((type) => {
-    return <><FormControlLabel key={{type} + '-'} value={type + '-'} control={<Radio />} label={<div>{type} <SouthIcon/></div>} />
-      <FormControlLabel key={{type} + '+'} value={type + '+'} control={<Radio />} label={<div>{type} <NorthIcon/></div>} /></>;
+    return <MenuItem key={{type} + 'MenuItem'} value={type}>{<div>{type}</div>} </MenuItem>;
   });
 
 const complexities = [ 'Low', 'Moderate', 'High', 'Very high' ];
 
 function Intro(props) {
+  const sortType = props.sortType;
 
   const handleChange = (event) => {
-    props.setSortType(event.target.value);
+    props.setSortType({type: event.target.value, direction: sortType.direction});
+  };
+
+  const toggleSortDirection = () => {
+    props.setSortType({type: sortType.type, direction: sortType.direction === '-' ? '+' : '-'});
   };
 
   return <Alert variant='primary'>
     <FormControl>
-      <FormLabel id='sort-label-group'>Sort by</FormLabel>
-      <RadioGroup
-      row
-      aria-labelledby='sort-label-group'
-      name='sort-radio-buttons-group'
-      value={props.sortType}
+      <Select
+      value={sortType.type}
       onChange={handleChange}
+      label="Sort by"
       >
-        {radioButtons}
-      </RadioGroup>
+        {sortOptions}
+      </Select>
+    <NorthIcon color={sortType.direction === '-' ? 'disabled' : 'primary'} onClick={toggleSortDirection}/>
+    <SouthIcon color={sortType.direction === '-' ? 'primary' : 'disabled'} onClick={toggleSortDirection}/>
     </FormControl>
     {complexities.map((complexity) => {
       return <Button
