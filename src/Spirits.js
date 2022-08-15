@@ -1,7 +1,7 @@
 /* eslint react/prop-types: 0 */
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import { Card, CardActionArea, CardContent, CardMedia, Dialog, DialogTitle, ImageList, ImageListItem, Typography } from '@mui/material';
+import { Card, CardActionArea, CardContent, CardMedia, Dialog, ImageList, ImageListItem, Typography } from '@mui/material';
 import Chart, { ValueAxis, CommonSeriesSettings, SeriesTemplate, Size } from 'devextreme-react/chart';
 import { Legend } from 'devextreme-react/bar-gauge';
 
@@ -14,8 +14,17 @@ const spiritToImage = (_name) => {
 
 const powerToImage = (_name) => {
   const name = _name.replaceAll(' ', '_').replace(/\W/g, '').toLowerCase();
-  console.log(  `${process.env.PUBLIC_URL}/assets/powers/${name}.webp`);
   return `${process.env.PUBLIC_URL}/assets/powers/${name}.webp`;
+};
+
+const spiritToFrontOfPlayerBoard = (_name) => {
+  const name = _name.replaceAll(' ', '_');
+  return `${process.env.PUBLIC_URL}/assets/playerboards/${name}_front.jpg`;
+};
+
+const spiritToBackOfPlayerBoard = (_name) => {
+  const name = _name.replaceAll(' ', '_');
+  return `${process.env.PUBLIC_URL}/assets/playerboards/${name}_back.jpg`;
 };
 
 const sortTypeToIndex = (sortType) => {
@@ -61,7 +70,6 @@ const palette = [
 
 const spiritPowers = spirits.map((spirit) => {
   return { name: spirit.name, content: <>
-    <DialogTitle>{spirit.name}</DialogTitle>
     <ImageList>
       {spirit.cards.map((cardname) =>
         <ImageListItem key={cardname}>
@@ -72,6 +80,15 @@ const spiritPowers = spirits.map((spirit) => {
     </ImageList>
   </>};
 });
+
+const playerBoard = (spirit, frontOfBoardShowing, setFrontOfBoardShowing) => {
+  return (spirit &&
+    <img
+      src={frontOfBoardShowing ? spiritToFrontOfPlayerBoard(spirit) : spiritToBackOfPlayerBoard(spirit)}
+      onClick={() => setFrontOfBoardShowing(!frontOfBoardShowing)}
+      />)
+    || <div />;
+};
 
 const spiritToSpiritPowers = (spirit) => {
   return (spirit && spiritPowers.find(a => {
@@ -126,7 +143,8 @@ const spiritToSpiritCard = (spirit) => {
 };
 
 function Spirits(props) {
-  const [selectedSpirit, setSelectedSpirit] = React.useState("Thunderspeaker");
+  const [selectedSpirit, setSelectedSpirit] = React.useState(false);
+  const [frontOfBoardShowing, setFrontOfBoardShowing] = React.useState(true);
   const sortedSpirits = spirits
     .filter((v) => props.complexityFilters[v.complexity])
     .sort(sortBySortType(props.sortType));
@@ -137,7 +155,11 @@ function Spirits(props) {
   else {
     return <Container>
       <Row>
-        <Dialog open={selectedSpirit !== false} onClose={() => setSelectedSpirit(false)}>
+        <Dialog
+          open={selectedSpirit !== false}
+          onClose={() => { setSelectedSpirit(false); setFrontOfBoardShowing(true); }}
+          >
+          {playerBoard(selectedSpirit, frontOfBoardShowing, setFrontOfBoardShowing)}
           {spiritToSpiritPowers(selectedSpirit)}
         </Dialog>
         {sortedSpirits.map((spirit) =>
