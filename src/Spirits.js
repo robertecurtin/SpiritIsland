@@ -1,7 +1,7 @@
 /* eslint react/prop-types: 0 */
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
+import { Card, CardActionArea, CardContent, CardMedia, Dialog, DialogTitle, ImageList, ImageListItem, Typography } from '@mui/material';
 import Chart, { ValueAxis, CommonSeriesSettings, SeriesTemplate, Size } from 'devextreme-react/chart';
 import { Legend } from 'devextreme-react/bar-gauge';
 
@@ -10,6 +10,12 @@ const spirits = require('./config/spirits.json');
 const spiritToImage = (_name) => {
   const name = _name.replaceAll(' ', '_');
   return `${process.env.PUBLIC_URL}/assets/spirits/${name}.png`;
+};
+
+const powerToImage = (_name) => {
+  const name = _name.replaceAll(' ', '_').replace(/\W/g, '').toLowerCase();
+  console.log(  `${process.env.PUBLIC_URL}/assets/powers/${name}.webp`);
+  return `${process.env.PUBLIC_URL}/assets/powers/${name}.webp`;
 };
 
 const sortTypeToIndex = (sortType) => {
@@ -53,12 +59,31 @@ const palette = [
   '#FFCE54',
 ];
 
+const spiritPowers = spirits.map((spirit) => {
+  return { name: spirit.name, content: <>
+    <DialogTitle>{spirit.name}</DialogTitle>
+    <ImageList>
+      {spirit.cards.map((cardname) =>
+        <ImageListItem key={cardname}>
+          <img src={powerToImage(cardname)} />
+        </ImageListItem>
+        )
+      }
+    </ImageList>
+  </>};
+});
+
+const spiritToSpiritPowers = (spirit) => {
+  return (spirit && spiritPowers.find(a => {
+    return a.name === spirit;
+  }).content) || <div />;
+};
+
 const spiritCards = spirits.map((spirit) => {
   const barData = summaryToBarData(spirit.summary);
   const spiritImage = spiritToImage(spirit.name);
 
-  return <Card sx={{ maxWidth: 345 }} key={spirit.name}>
-    <CardActionArea>
+  return <CardActionArea key={spirit.name}>
       <CardMedia
         component="img"
         image={spiritImage}
@@ -91,8 +116,7 @@ const spiritCards = spirits.map((spirit) => {
           {spirit.description}
         </Typography>
       </CardContent>
-    </CardActionArea>
-  </Card>;
+    </CardActionArea>;
 });
 
 const spiritToSpiritCard = (spirit) => {
@@ -102,6 +126,7 @@ const spiritToSpiritCard = (spirit) => {
 };
 
 function Spirits(props) {
+  const [selectedSpirit, setSelectedSpirit] = React.useState("Thunderspeaker");
   const sortedSpirits = spirits
     .filter((v) => props.complexityFilters[v.complexity])
     .sort(sortBySortType(props.sortType));
@@ -112,7 +137,14 @@ function Spirits(props) {
   else {
     return <Container>
       <Row>
-        {sortedSpirits.map((spirit) => spiritToSpiritCard(spirit))}
+        <Dialog open={selectedSpirit !== false} onClose={() => setSelectedSpirit(false)}>
+          {spiritToSpiritPowers(selectedSpirit)}
+        </Dialog>
+        {sortedSpirits.map((spirit) =>
+        <Card sx={{ maxWidth: 345 }} key={`${spirit.name}_sorted`} onClick={() => setSelectedSpirit(spirit.name)}>
+          {spiritToSpiritCard(spirit)}
+        </Card>
+        )}
       </Row>
     </Container>;
   }
